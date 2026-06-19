@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
+
 function Login() {
   const {
     register,
@@ -18,13 +19,15 @@ function Login() {
     await axios
       .post("http://localhost:4002/user/login", userInfo)
       .then((res) => {
-        console.log(res.data);
         if (res.data) {
           toast.success("Loggedin Successfully");
           document.getElementById("my_modal_3").close();
+
+          //  SAVE THE DATA FIRST
+          localStorage.setItem("Users", JSON.stringify(res.data.user));
+
           setTimeout(() => {
             window.location.reload();
-            localStorage.setItem("Users", JSON.stringify(res.data.user));
           }, 1000);
         }
       })
@@ -32,10 +35,10 @@ function Login() {
         if (err.response) {
           console.log(err);
           toast.error("Error: " + err.response.data.message);
-          setTimeout(() => {}, 2000);
         }
       });
   };
+
   return (
     <div>
       <dialog id="my_modal_3" className="modal">
