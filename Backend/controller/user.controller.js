@@ -50,8 +50,6 @@ export const login = async (req, res) => {
     if (!user || !isMatch) {
       return res.status(400).json({ message: "Invalid username or password" });
     }
-
-    // THIS FIXES YOUR BUG: Send the user object back so LocalStorage can save it!
     res.status(200).json({
       message: "Login successful",
       user: {
