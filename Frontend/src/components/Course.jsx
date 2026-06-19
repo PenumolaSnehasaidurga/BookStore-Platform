@@ -7,7 +7,7 @@ function Course() {
   useEffect(() => {
     const getBook = async () => {
       try {
-        const res = await axios.get("http://localhost:4001/book");
+        const res = await axios.get("http://localhost:4002/book");
         console.log(res.data);
         setBook(res.data);
       } catch (error) {
@@ -25,13 +25,13 @@ function Course() {
             <span className="text-pink-500"> Here! :)</span>
           </h1>
           <p className="mt-12">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
-            assumenda? Repellendus, iste corrupti? Tempore laudantium
-            repellendus accusamus accusantium sed architecto odio, nisi expedita
-            quas quidem nesciunt debitis dolore non aspernatur praesentium
-            assumenda sint quibusdam, perspiciatis, explicabo sequi fugiat amet
-            animi eos aut. Nobis quisquam reiciendis sunt quis sed magnam
-            consequatur!
+            Welcome to our curated collection of books! Dive into a world of
+            imagination where every page brings a new adventure. Whether you are
+            looking for a spine-chilling horror, a gripping thriller to keep you
+            on the edge of your seat, a heartwarming story, or a hilarious
+            comedy to brighten your day, we have something special just for you.
+            Explore our library, discover new authors, and find your next
+            unforgettable read today.
           </p>
           <Link to="/">
             <button className="mt-6 bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-700 duration-300">
