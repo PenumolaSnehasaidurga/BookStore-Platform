@@ -31,7 +31,7 @@ function Cards({ item }) {
               {authUser ? (
                 // 🟢 If user IS logged in: Show the normal working Amazon link
                 <a
-                  href={item.amazonLink}
+                  href={item.flipkartLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer px-3 py-1 rounded-full border-[2px] border-pink-500 hover:bg-pink-500 hover:text-white duration-200"
